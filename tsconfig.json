@@ -2,6 +2,29 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@planner/compras": [
+        "dist/planner/compras"
+      ],
+      "@planner/decisao": [
+        "dist/planner/decisao"
+      ],
+      "@planner/dia": [
+        "dist/planner/dia"
+      ],
+      "@planner/habitos": [
+        "dist/planner/habitos"
+      ],
+      "@planner/ideias": [
+        "dist/planner/ideias"
+      ],
+      "@planner/mes": [
+        "dist/planner/mes"
+      ],
+      "@planner/semana": [
+        "dist/planner/semana"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
