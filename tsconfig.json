@@ -3,6 +3,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "@planner/Shared": [
+        "dist/planner/shared"
+      ],
       "@planner/compras": [
         "dist/planner/compras"
       ],

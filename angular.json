@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/planner/ideias",
       "sourceRoot": "projects/planner/ideias/src",
-      "prefix": "lib",
+      "prefix": "planner",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -40,7 +40,7 @@
       "projectType": "library",
       "root": "projects/planner/habitos",
       "sourceRoot": "projects/planner/habitos/src",
-      "prefix": "lib",
+      "prefix": "planner",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -73,7 +73,7 @@
       "projectType": "library",
       "root": "projects/planner/semana",
       "sourceRoot": "projects/planner/semana/src",
-      "prefix": "lib",
+      "prefix": "planner",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -106,7 +106,7 @@
       "projectType": "library",
       "root": "projects/planner/mes",
       "sourceRoot": "projects/planner/mes/src",
-      "prefix": "lib",
+      "prefix": "planner",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -139,7 +139,7 @@
       "projectType": "library",
       "root": "projects/planner/dia",
       "sourceRoot": "projects/planner/dia/src",
-      "prefix": "lib",
+      "prefix": "planner",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -172,7 +172,7 @@
       "projectType": "library",
       "root": "projects/planner/decisao",
       "sourceRoot": "projects/planner/decisao/src",
-      "prefix": "lib",
+      "prefix": "planner",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -203,9 +203,14 @@
     },
     "@planner/compras": {
       "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
       "root": "projects/planner/compras",
       "sourceRoot": "projects/planner/compras/src",
-      "prefix": "lib",
+      "prefix": "planner",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -226,6 +231,141 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "tsConfig": "projects/planner/compras/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "@planner/examplers": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
+      "root": "projects/planner/examplers",
+      "sourceRoot": "projects/planner/examplers/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/planner/examplers",
+            "index": "projects/planner/examplers/src/index.html",
+            "main": "projects/planner/examplers/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/planner/examplers/tsconfig.app.json",
+            "inlineStyleLanguage": "sass",
+            "assets": [
+              "projects/planner/examplers/src/favicon.ico",
+              "projects/planner/examplers/src/assets"
+            ],
+            "styles": [
+              "projects/planner/examplers/src/styles.sass"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "@planner/examplers:build:production"
+            },
+            "development": {
+              "browserTarget": "@planner/examplers:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "@planner/examplers:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/planner/examplers/tsconfig.spec.json",
+            "inlineStyleLanguage": "sass",
+            "assets": [
+              "projects/planner/examplers/src/favicon.ico",
+              "projects/planner/examplers/src/assets"
+            ],
+            "styles": [
+              "projects/planner/examplers/src/styles.sass"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "@planner/shared": {
+      "projectType": "library",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
+      "root": "projects/planner/shared",
+      "sourceRoot": "projects/planner/shared/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/planner/shared/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/planner/shared/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/planner/shared/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/planner/shared/tsconfig.spec.json",
             "polyfills": [
               "zone.js",
               "zone.js/testing"
