@@ -1,1 +1,9 @@
-<p>historico works!</p>
+<h1>Hist&oacute;rico</h1>
+
+<ul class="itensContainer">
+    <ng-container *ngFor="let item of items">
+        <li class="item">
+            <span class="data">{{item.data}}</span><span class="total">{{item.total | currency : 'BRL'}}</span>
+        </li>
+    </ng-container>
+</ul>

@@ -345,7 +345,7 @@
       },
       "root": "projects/planner/shared",
       "sourceRoot": "projects/planner/shared/src",
-      "prefix": "lib",
+      "prefix": "planner",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",

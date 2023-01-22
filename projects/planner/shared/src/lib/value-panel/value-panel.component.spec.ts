@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PainelComponent } from './painel.component';
+import { ValuePanelComponent } from './value-panel.component';
 
-describe('PainelComponent', () => {
-  let component: PainelComponent;
-  let fixture: ComponentFixture<PainelComponent>;
+describe('ValuePanelComponent', () => {
+  let component: ValuePanelComponent;
+  let fixture: ComponentFixture<ValuePanelComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PainelComponent ]
+      declarations: [ ValuePanelComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PainelComponent);
+    fixture = TestBed.createComponent(ValuePanelComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

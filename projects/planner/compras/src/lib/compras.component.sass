@@ -1,20 +1,36 @@
 :host
     display: grid
-    grid-template-areas: 'cabecalho cabecalho' 'historico panel' 'historico itens'
+    grid-template-areas: 'cabecalho cabecalho cabecalho' 'historico divider panel' 'historico divider itens'
     height: 100vh
-    grid-template-columns: auto 1fr
+    grid-template-columns: 1fr auto 2fr
     grid-template-rows: auto auto 1fr
 
 planner-cabecalho
     grid-area: cabecalho
 
 planner-compras-historico
+    overflow-y: auto
     grid-area: historico
+    scrollbar-width: none
+
+    &::-webkit-scrollbar
+        display: none  
+        
+
+#divider
+    grid-area: divider
+    width: 5px
+    background-color: orange
+    margin: 24px 0
 
 #panelsContainer
+    padding: 24px
     grid-area: panel
     height: auto
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+    column-gap: 24px
 
 planner-compras-itens
     grid-area: itens
-    
