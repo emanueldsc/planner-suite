@@ -1,3 +1,9 @@
+@mixin noscroll()
+    overflow-y: auto
+    scrollbar-width: none
+    &::-webkit-scrollbar
+        display: none
+
 :host
     display: grid
     grid-template-areas: 'cabecalho cabecalho cabecalho' 'historico divider panel' 'historico divider itens'
@@ -9,13 +15,8 @@ planner-cabecalho
     grid-area: cabecalho
 
 planner-compras-historico
-    overflow-y: auto
     grid-area: historico
-    scrollbar-width: none
-
-    &::-webkit-scrollbar
-        display: none  
-        
+    @include noscroll
 
 #divider
     grid-area: divider
@@ -34,3 +35,4 @@ planner-compras-historico
 
 planner-compras-itens
     grid-area: itens
+    @include noscroll

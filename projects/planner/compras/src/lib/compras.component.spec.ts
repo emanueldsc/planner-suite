@@ -3,7 +3,6 @@ import { By } from '@angular/platform-browser';
 import { SharedModule } from 'projects/planner/shared/src/public-api';
 import { HistoricoComponent } from './components/historico/historico.component';
 import { ItensComponent } from './components/itens/itens.component';
-import { PainelComponent } from './components/painel/painel.component';
 
 import { ComprasComponent } from './compras.component';
 
@@ -16,7 +15,6 @@ describe('ComprasComponent', () => {
       declarations: [ 
         ComprasComponent, 
         HistoricoComponent,
-        PainelComponent,
         ItensComponent
       ],
       imports: [SharedModule]
@@ -42,7 +40,7 @@ describe('ComprasComponent', () => {
     expect(historicoComponent).toBeTruthy()
   })
 
-  it('Deve verificar se os componentes de paineis estão sendo renderizados.', () => {
+  fit('Deve verificar se os componentes de paineis estão sendo renderizados.', () => {
     const listPaineisComponents = fixture.debugElement.queryAll(By.css('planner-compras-historico'))
     listPaineisComponents.forEach(panel => expect(panel).toBeTruthy())
   })

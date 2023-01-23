@@ -1,9 +1,9 @@
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { ComprasComponent } from './compras.component';
+import { SharedModule } from 'projects/planner/shared/src/public-api';
 import { HistoricoComponent } from './components/historico/historico.component';
 import { ItensComponent } from './components/itens/itens.component';
-import { CommonModule } from '@angular/common';
-import { SharedModule } from 'projects/planner/shared/src/public-api';
+import { ComprasComponent } from './compras.component';
 
 
 
@@ -14,8 +14,8 @@ import { SharedModule } from 'projects/planner/shared/src/public-api';
     ItensComponent
   ],
   imports: [
-    CommonModule,
-    SharedModule
+    SharedModule,
+    CommonModule
   ],
   exports: [
     ComprasComponent

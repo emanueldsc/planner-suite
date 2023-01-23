@@ -4,8 +4,8 @@
 <planner-compras-historico></planner-compras-historico>
 <div id="divider"></div>
 <section id="panelsContainer">
-    <planner-value-panel title="Title" value="R$0,00"></planner-value-panel>
-    <planner-value-panel title="Title" value="R$0,00"></planner-value-panel>
-    <planner-value-panel title="Title" value="R$0,00"></planner-value-panel>
+    <planner-value-panel title="Orçamento" [value]="orcamento"></planner-value-panel>
+    <planner-value-panel title="Subtotal" [value]="subtotal"></planner-value-panel>
+    <planner-value-panel title="Total" [value]="total"></planner-value-panel>
 </section>
-<planner-compras-itens></planner-compras-itens>
+<planner-compras-itens [items]="items"></planner-compras-itens>
